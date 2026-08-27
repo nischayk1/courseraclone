@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LearnSpace — a modern online learning platform built with HTML, CSS and JavaScript." />
+  <title>LearnSpace | Learn without limits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="LearnSpace home">
+        <span class="brand-mark">L</span>
+        <span>learnspace</span>
+      </a>
+
+      <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#explore">Explore</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+        <button class="btn btn-outline" id="loginBtn">Log in</button>
+        <button class="btn btn-primary" id="signupBtn">Join for free</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">LEARN. BUILD. GROW.</span>
+          <h1>Upgrade your skills.<br><span>Change your future.</span></h1>
+          <p>Project-based courses from industry experts, designed to help you move from “I should learn this” to “I can build this.”</p>
+
+          <form class="hero-search" id="heroSearchForm">
+            <input id="heroSearch" type="search" placeholder="What do you want to learn?" aria-label="Search courses">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+
+          <div class="trust-row">
+            <div class="avatar-stack" aria-hidden="true">
+              <span>AK</span><span>RS</span><span>JM</span><span>+</span>
+            </div>
+            <span><strong>120K+</strong> learners building skills every month</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Learning dashboard preview">
+          <div class="float-card fc-top">
+            <span class="mini-icon">⚡</span>
+            <div><strong>4.9/5</strong><small>Course rating</small></div>
+          </div>
+          <div class="screen-card">
+            <div class="screen-top">
+              <span>My learning</span>
+              <span class="tiny-dot"></span>
+            </div>
+            <div class="screen-main">
+              <div class="course-thumb gradient-a"></div>
+              <div class="screen-info">
+                <small>Design</small>
+                <strong>UI/UX Design Masterclass</strong>
+                <div class="progress"><span style="width:76%"></span></div>
+                <small>76% complete</small>
+              </div>
+            </div>
+            <div class="screen-stats">
+              <div><b>18</b><span>Lessons</span></div>
+              <div><b>06:42</b><span>Hours left</span></div>
+              <div><b>82%</b><span>Quiz score</span></div>
+            </div>
+          </div>
+          <div class="float-card fc-bottom">
+            <span class="mini-icon success">✓</span>
+            <div><strong>Certificate unlocked</strong><small>Frontend Fundamentals</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Platform stats">
+      <div class="container ticker-grid">
+        <div><strong>4,000+</strong><span>Curated courses</span></div>
+        <div><strong>850+</strong><span>Expert instructors</span></div>
+        <div><strong>92%</strong><span>Completion satisfaction</span></div>
+        <div><strong>24/7</strong><span>Learn at your pace</span></div>
+      </div>
+    </section>
+
+    <section id="explore" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">POPULAR RIGHT NOW</span>
+            <h2>Learn something useful today</h2>
+            <p>Choose a path, pick a course, and start creating.</p>
+          </div>
+          <a class="text-link" href="#courseGrid">View all courses →</a>
+        </div>
+
+        <div class="filter-bar">
+          <div class="category-pills" id="categoryPills">
+            <button class="pill active" data-category="all">All</button>
+            <button class="pill" data-category="Development">Development</button>
+            <button class="pill" data-category="Design">Design</button>
+            <button class="pill" data-category="Business">Business</button>
+            <button class="pill" data-category="Data">Data</button>
+            <button class="pill" data-category="AI">AI</button>
+          </div>
+          <label class="sort-wrap">
+            <span>Sort</span>
+            <select id="sortSelect">
+              <option value="popular">Most popular</option>
+              <option value="rating">Highest rated</option>
+              <option value="price-low">Lowest price</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="course-grid" id="courseGrid"></div>
+        <div class="empty-state hidden" id="emptyState">
+          <div class="empty-icon">⌕</div>
+          <h3>No courses found</h3>
+          <p>Try a different keyword or category.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="section section-soft">
+      <div class="container">
+        <div class="section-heading centered">
+          <div>
+            <span class="eyebrow">EXPLORE BY SKILL</span>
+            <h2>Build a learning path that fits you</h2>
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <button class="category-card" data-filter="Development">
+            <span class="cat-icon">{"</>"}</span><strong>Development</strong><small>Web, apps & software</small>
+          </button>
+          <button class="category-card" data-filter="Design">
+            <span class="cat-icon">✦</span><strong>Design</strong><small>UI, UX & visual thinking</small>
+          </button>
+          <button class="category-card" data-filter="Business">
+            <span class="cat-icon">↗</span><strong>Business</strong><small>Strategy & leadership</small>
+          </button>
+          <button class="category-card" data-filter="Data">
+            <span class="cat-icon">▥</span><strong>Data</strong><small>Analytics & visualization</small>
+          </button>
+          <button class="category-card" data-filter="AI">
+            <span class="cat-icon">◎</span><strong>Artificial intelligence</strong><small>ML, prompts & automation</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section featured">
+      <div class="container featured-box">
+        <div>
+          <span class="eyebrow">SKILL OF THE MONTH</span>
+          <h2>Become an AI-powered creator</h2>
+          <p>Learn practical workflows for research, coding, content, automation and data — without needing to become a machine learning engineer.</p>
+          <button class="btn btn-primary" id="featuredBtn">Explore AI courses</button>
+        </div>
+        <div class="featured-visual">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+          <div class="ai-card">
+            <span>AI PLAYBOOK</span>
+            <strong>Prompt → Prototype → Publish</strong>
+            <div class="ai-lines"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container learning-row">
+        <div class="learning-copy">
+          <span class="eyebrow">WHY LEARNSPACE</span>
+          <h2>A platform designed around progress, not endless scrolling.</h2>
+          <div class="benefit-list">
+            <div><span>01</span><div><strong>Learn by doing</strong><p>Every course is centered around projects, practice and real outcomes.</p></div></div>
+            <div><span>02</span><div><strong>Know what to do next</strong><p>Simple learning paths help you move from fundamentals to confident execution.</p></div></div>
+            <div><span>03</span><div><strong>Show your progress</strong><p>Track completion, save courses and earn shareable certificates.</p></div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">“</div>
+          <p>I stopped collecting bookmarks and actually started finishing courses. The project-first format makes the difference.</p>
+          <div class="person">
+            <div class="person-avatar">MR</div>
+            <div><strong>Maya Rao</strong><span>Product designer</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <span class="eyebrow light">YOUR NEXT SKILL STARTS HERE</span>
+          <h2>Make today the day you start.</h2>
+        </div>
+        <button class="btn btn-white" id="ctaBtn">Start learning free</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home"><span class="brand-mark">L</span><span>learnspace</span></a>
+        <p>Learn practical skills from people doing the work.</p>
+      </div>
+      <div><h4>Platform</h4><a href="#explore">Courses</a><a href="#categories">Categories</a><a href="#about">Why LearnSpace</a></div>
+      <div><h4>Company</h4><a href="#about">About</a><a href="#home">For teams</a><a href="#home">Careers</a></div>
+      <div><h4>Support</h4><a href="#home">Help center</a><a href="#home">Contact</a><a href="#home">Privacy</a></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 LearnSpace. Built with HTML, CSS & JavaScript.</span>
+      <span>Made for the open web.</span>
+    </div>
+  </footer>
+
+  <div class="modal hidden" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalVisual" class="modal-visual gradient-a"></div>
+      <div class="modal-content">
+        <span class="eyebrow" id="modalCategory">COURSE</span>
+        <h2 id="modalTitle">Course title</h2>
+        <p id="modalDescription">Course description</p>
+        <div class="modal-meta"><span id="modalInstructor"></span><span id="modalRating"></span><span id="modalLevel"></span></div>
+        <div class="modal-price"><strong id="modalPrice">$49</strong><span>one-time purchase</span></div>
+        <button class="btn btn-primary btn-full" id="enrollBtn">Enroll in course</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Done!</div>
+  <script src="script.js"></script>
+</body>
+</html>
